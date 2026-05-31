@@ -55,7 +55,7 @@ def predict_lang(text):
 
     confidence = np.max(probabilities)
 
-    language_code = encode.inverse_transform(prediction)[0]
+    language_code = encoder.inverse_transform(prediction)[0]
 
     language_name = language_map.get(language_code, language_code)
 
