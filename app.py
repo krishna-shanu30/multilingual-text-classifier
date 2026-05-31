@@ -8,12 +8,12 @@ import joblib
 import numpy as np
 
 
-# In[11]:
+# In[2]:
 
 
-model= joblib.load("language_model.pkl")
-vectorizer= joblib.load("tfidf_vectorizer.pkl")
-encode = joblib.load("label_encoder.pkl")
+model= joblib.load(r"D:\mulit-text-classifier\models\language_model.pkl")
+vectorizer= joblib.load(r"D:\mulit-text-classifier\models\tfidf_vectorizer.pkl")
+encode = joblib.load(r"D:\mulit-text-classifier\models\label_encoder.pkl")
 language_map = {
     "pt": "Portuguese",
     "bg": "Bulgarian",
@@ -38,7 +38,7 @@ language_map = {
 }
 
 
-# In[19]:
+# In[3]:
 
 
 def predict_lang(text):
