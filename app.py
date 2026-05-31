@@ -1,23 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
+import streamlit as st
 import joblib
 import numpy as np
 
+st.title("Multilingual Text Classifier")
 
-# In[2]:
-
-
-
-
+# Load models
 model = joblib.load("language_model.pkl")
-
 vectorizer = joblib.load("tfidf_vectorizer.pkl")
-
 encoder = joblib.load("label_encoder.pkl")
+
 language_map = {
     "pt": "Portuguese",
     "bg": "Bulgarian",
@@ -41,12 +32,7 @@ language_map = {
     "ja": "Japanese"
 }
 
-
-# In[3]:
-
-
 def predict_lang(text):
-
     text_vector = vectorizer.transform([text])
 
     prediction = model.predict(text_vector)
@@ -60,8 +46,11 @@ def predict_lang(text):
     language_name = language_map.get(language_code, language_code)
 
     return language_name, confidence
-text= input("enter text:")
-lang,conf= predict_lang(text)
-print("Predicted Language:",lang)
-print("confidence:",round(conf*100,2),"%")
 
+text = st.text_area("Enter Text")
+
+if st.button("Predict"):
+    lang, conf = predict_lang(text)
+
+    st.success(f"Predicted Language: {lang}")
+    st.info(f"Confidence: {round(conf * 100, 2)}%")
