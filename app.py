@@ -11,9 +11,13 @@ import numpy as np
 # In[2]:
 
 
-model= joblib.load("language_model.pkl")
-vectorizer= joblib.load("tfidf_vectorizer.pkl")
-encode = joblib.load("label_encoder.pkl")
+
+
+model = joblib.load("language_model.pkl")
+
+vectorizer = joblib.load("tfidf_vectorizer.pkl")
+
+encoder = joblib.load("label_encoder.pkl")
 language_map = {
     "pt": "Portuguese",
     "bg": "Bulgarian",
