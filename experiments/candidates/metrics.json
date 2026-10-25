@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.9964477308974916,
+  "macro_f1": 0.9964262933335537,
+  "weighted_f1": 0.9964464509318555,
+  "train_rows": 55173,
+  "test_rows": 13794,
+  "conflicting_text_groups_removed": 4,
+  "normalized_unique_rows": 68967,
+  "training_seconds": 40.75
+}
